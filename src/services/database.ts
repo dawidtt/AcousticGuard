@@ -22,7 +22,7 @@ export const saveMeasurement = (dbValue: number, location: string, timestamp: st
 };
 
 export const updateOrSaveMeasurement = (dbValue: number, location: string) => {
-  // Używamy formatu 'YYYY-MM-DD HH:MM:SS' dla czytelności w SQL
+  // format 'YYYY-MM-DD HH:MM:SS'
   const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19);
 
   const lastEntry = db.getFirstSync(
